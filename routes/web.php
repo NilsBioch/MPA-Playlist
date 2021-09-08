@@ -19,3 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index'])->name('genre');
+
+Route::get('/song', [App\Http\Controllers\SongController::class, 'index'])->name('song');
+
+Route::get('/genre/{genreid}', [App\Http\Controllers\SongController::class, 'filterOnGenre'])->name('song');
+

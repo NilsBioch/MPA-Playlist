@@ -17,6 +17,7 @@ class Songs extends Migration
             $table->bigIncrements('id');
             $table->text('name');
             $table->text('artist_band');
+            $table->integer('genreId');
             $table->time('duration');
         });
     }

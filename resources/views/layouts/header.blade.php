@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="/song">Songs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="genre">Genres</a>
+                <a class="nav-link" href="/genre">Genres</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>

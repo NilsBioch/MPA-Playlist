@@ -13,6 +13,7 @@ class GenreController extends Controller
         $genres = Genre::all();
         return view('Genre', ['genres' => $genres]);
     }
+
 }
 
 
