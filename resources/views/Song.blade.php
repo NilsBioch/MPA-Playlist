@@ -1,32 +1,19 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Songs') }}
+        </h2>
+    </x-slot>
 
-@section('content')
-
-<div class='card container mt-3 px-0'>
-    <h5 class='card-header'>Songs</h5>
-    <div class='card-body'>
-        @foreach($songs as $song)
-        <div class="card mt-2">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item ">
-                    {{ $song->name }}  
-                    <div class="btn-group dropleft float-right">
-                        <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Details
-                        </button>
-                        <div class="dropdown-menu">
-                            <ul class="list-group">
-                                <li class="list-group-item">Name: {{ $song->name }} </li>
-                                <li class="list-group-item">Artist/Band: {{ $song->artist_band }}</li>
-                                <li class="list-group-item">Duration: {{ $song->duration }} </li>
-                            </ul>
-                        </div>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                @foreach($songs as $song)
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        {{ $song->name }}
                     </div>
-                </li>
-            </ul>
+                @endforeach
+            </div>
         </div>
-        @endforeach
     </div>
-</div>
-@endsection('content')
+</x-app-layout>

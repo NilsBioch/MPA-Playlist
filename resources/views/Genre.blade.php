@@ -1,23 +1,19 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Genres') }}
+        </h2>
+    </x-slot>
 
-@section('content')
-
-<div class='card container mt-3 px-0'>
-    <h5 class='card-header'>Genres</h5>
-    <div class='card-body'>
-        @foreach($genres as $genre)
-        
-        <div class="card mt-2" >
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item ">
-                  {{ $genre->name }} 
-                  <a class="btn btn-outline-info float-right" href=genre/{{ $genre->id }} role="button">Songs in this Genre</a>
-                </li>
-            </ul>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                @foreach($genres as $genre)
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        {{ $genre->name }}
+                    </div>
+                @endforeach
+            </div>
         </div>
-        @endforeach
     </div>
-</div>
-@endsection('content')
-
-
+</x-app-layout>

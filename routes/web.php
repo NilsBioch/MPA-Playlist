@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use app\Http\Controllers\GenreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +21,10 @@ Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index'])->na
 
 Route::get('/song', [App\Http\Controllers\SongController::class, 'index'])->name('song');
 
-Route::get('/genre/{genreid}', [App\Http\Controllers\SongController::class, 'filterOnGenre'])->name('song');
+// Route::get('/genre/{genreid}', [App\Http\Controllers\SongController::class, 'filterOnGenre'])->name('song');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
