@@ -8,19 +8,31 @@ use Illuminate\Http\Request;
 
 use App\Models\Playlist;
 
+use App\Models\Song;
+
 use Session;
 
 class PlaylistController extends Controller
 {
-    public function show(Request $request)
+    public function index()
     {
-        //$value = $request->session()->get('key');
-        //print_r ($request->session()->all());
+        $playlist = new Playlist(); 
+        $songs = Song::findMany($playlist->getSongIds());
+        return view('playlist', ['songs' => $songs]);
     }
 
     public function addSongToPlaylist($songId)
     {
         $playlist = new Playlist(); // constructor
         $playlist->addSongToPlaylist($songId);
+        $songs = Song::findMany($playlist->getSongIds());
+        return view('playlist', ['songs' => $songs]);
+    }
+
+    public function removeSongFromPlaylist($songId){
+        $playlist = new Playlist(); // constructor
+        $playlist->removeSongFromPlaylist($songId);
+        $songs = Song::findMany($playlist->getSongIds());
+        return view('playlist', ['songs' => $songs]);
     }
 }

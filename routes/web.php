@@ -19,12 +19,13 @@ Route::any('/', function () {
 
 Route::get('/genre/{genreId}', [App\Http\Controllers\SongController::class, 'filterOnGenre'])->name('song');
 
-Route::get('/playlist/{songId}', [App\Http\Controllers\PlaylistController::class, 'addSongToPlaylist'])->name('playlist');
 
-Route::get('/playlist', function () 
-{ 
-    return view('/playlist'); 
-})->name('playlist');
+Route::get('/playlist/{songId}', [App\Http\Controllers\PlaylistController::class, 'addSongToPlaylist'])->name('playlist.add');
+
+Route::get('/playlist/remove/{songId}', [App\Http\Controllers\PlaylistController::class, 'removeSongFromPlaylist'])->name('playlist.remove');
+
+Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'index'])->name('playlist');
+
 
 // Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'show'])->name('playlist');
 
