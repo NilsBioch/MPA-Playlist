@@ -19,13 +19,15 @@ Route::any('/', function () {
 
 Route::get('/genre/{genreId}', [App\Http\Controllers\SongController::class, 'filterOnGenre'])->name('song');
 
-
 Route::get('/playlist/{songId}', [App\Http\Controllers\PlaylistController::class, 'addSongToPlaylist'])->name('playlist.add');
 
 Route::get('/playlist/remove/{songId}', [App\Http\Controllers\PlaylistController::class, 'removeSongFromPlaylist'])->name('playlist.remove');
 
 Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'index'])->name('playlist');
 
+Route::post('/savePlaylist', [App\Http\Controllers\PlaylistController::class, 'savePlaylist']);
+
+Route::get('/userPlaylist', [App\Http\Controllers\PlaylistController::class, 'userPlaylistIndex'])->name('userPlaylist');
 
 // Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'show'])->name('playlist');
 
@@ -33,19 +35,10 @@ Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index'])->na
 
 Route::get('/song', [App\Http\Controllers\SongController::class, 'index'])->name('song');
 
-Route::get('/login', function () 
-{ 
-    return view('/login'); 
-})->name('login');
+Route::get('/login', function () { return view('/login'); })->name('login');
 
-Route::get('/register', function () 
-{ 
-    return view('/register'); 
-})->name('register');
+Route::get('/register', function () { return view('/register'); })->name('register');
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

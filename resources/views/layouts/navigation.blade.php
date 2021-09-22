@@ -24,6 +24,9 @@
                     <x-nav-link class="text-decoration-none" :href="route('playlist')" :active="request()->routeIs('playlist')">
                         {{ __('Playlist') }}
                     </x-nav-link>
+                    <x-nav-link class="text-decoration-none" :href="route('userPlaylist')" :active="request()->routeIs('userPlaylist')">
+                        {{ __('Your Playlists') }}
+                    </x-nav-link>
                 </div>
             </div>
             @guest

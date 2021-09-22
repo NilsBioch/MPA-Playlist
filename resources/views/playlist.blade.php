@@ -1,9 +1,18 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Songs') }}
-        </h2>
+        <div class="d-flex">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Your Playlist') }}
+            </h2>
+            @auth
+                <a data-toggle="modal" data-target="#exampleModal" class="text-decoration-none ml-auto font-semibold  hover:text-gray-600 text-xl text-gray-800 leading-tight">
+                    {{ __('Save Playlist') }}
+                </a>
+            @endauth
+        </div>
     </x-slot>
+
+    @include('layouts.savePlaylist')
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
