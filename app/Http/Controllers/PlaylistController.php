@@ -10,7 +10,10 @@ use App\Models\Playlist;
 
 use App\Models\Song;
 
+use DB;
+
 use Session;
+
 
 class PlaylistController extends Controller
 {
@@ -19,21 +22,6 @@ class PlaylistController extends Controller
         $playlist = new Playlist(); 
         $songs = Song::findMany($playlist->getSongIds());
         return view('playlist', ['songs' => $songs]);
-    }
-
-    public function userPlaylistIndex()
-    {
-        // $playlist = new Playlist(); 
-        // $songs = Song::findMany($playlist->getSongIds());
-        // return view('playlist', ['songs' => $songs]);
-        return view('userPlaylist');
-    }
-    
-    public function savePlaylist(Request $request)
-    {
-        dd($request->all());  //to check all the datas dumped from the form
-        //if your want to get single element,someName in this case
-        $playlistName = $request->playlistName; 
     }
 
     public function addSongToPlaylist($songId)

@@ -25,9 +25,9 @@ Route::get('/playlist/remove/{songId}', [App\Http\Controllers\PlaylistController
 
 Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'index'])->name('playlist');
 
-Route::post('/savePlaylist', [App\Http\Controllers\PlaylistController::class, 'savePlaylist']);
+Route::post('/savePlaylist', [App\Http\Controllers\UserPlaylistController::class, 'savePlaylist']);
 
-Route::get('/userPlaylist', [App\Http\Controllers\PlaylistController::class, 'userPlaylistIndex'])->name('userPlaylist');
+Route::get('/userPlaylist', [App\Http\Controllers\UserPlaylistController::class, 'index'])->name('userPlaylist');
 
 // Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'show'])->name('playlist');
 

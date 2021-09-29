@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UserPlaylists extends Migration
+class SongUserplaylist extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class UserPlaylists extends Migration
      */
     public function up()
     {
-        Schema::create('userplaylists', function (Blueprint $table) {
+        Schema::create('song_userplaylist', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->text('name');
+            $table->integer('userplaylist_id');
+            $table->integer('song_id');
             $table->timestamps();
         });
     }

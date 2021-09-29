@@ -47,14 +47,14 @@ class SongSeeder extends Seeder
             'id' => 5,
             'name' => 'Master of Puppets  ',
             'artist_band' => 'Metallica',
-            'genreId' => '2',
+            'genreId' => '3',
             'duration' => '00:03:00'
         ]);
         DB::table('songs')->insert([
             'id' => 6,
             'name' => 'Paranoid',
             'artist_band' => 'Black Sabbath',
-            'genreId' => '2',
+            'genreId' => '3',
             'duration' => '00:03:00'
         ]);
     }
