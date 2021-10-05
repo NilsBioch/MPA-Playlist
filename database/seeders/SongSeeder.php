@@ -20,42 +20,42 @@ class SongSeeder extends Seeder
             'name' => 'Thunderstruck',
             'artist_band' => 'AC/DC',
             'genreId' => '1',
-            'duration' => '00:03:00'
+            'duration' => '146'
         ]);
         DB::table('songs')->insert([
             'id' => 2,
             'name' => 'Smells like teen spirit',
             'artist_band' => 'Nirvana',
             'genreId' => '1',
-            'duration' => '00:03:00'
+            'duration' => '254'
         ]);
         DB::table('songs')->insert([
             'id' => 3,
             'name' => 'Flesh and Bone',
             'artist_band' => 'Black Math',
             'genreId' => '2',
-            'duration' => '00:03:00'
+            'duration' => '213'
         ]);
         DB::table('songs')->insert([
             'id' => 4,
             'name' => 'Strangelove',
             'artist_band' => 'Black Math',
             'genreId' => '2',
-            'duration' => '00:03:00'
+            'duration' => '423'
         ]);
         DB::table('songs')->insert([
             'id' => 5,
             'name' => 'Master of Puppets  ',
             'artist_band' => 'Metallica',
             'genreId' => '3',
-            'duration' => '00:03:00'
+            'duration' => '125'
         ]);
         DB::table('songs')->insert([
             'id' => 6,
             'name' => 'Paranoid',
             'artist_band' => 'Black Sabbath',
             'genreId' => '3',
-            'duration' => '00:03:00'
+            'duration' => '180'
         ]);
     }
 }

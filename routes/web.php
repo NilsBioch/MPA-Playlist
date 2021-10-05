@@ -27,9 +27,15 @@ Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'index'
 
 Route::post('/savePlaylist', [App\Http\Controllers\UserPlaylistController::class, 'savePlaylist']);
 
-Route::get('/userPlaylist', [App\Http\Controllers\UserPlaylistController::class, 'index'])->name('userPlaylist');
+Route::post('/editPlaylist', [App\Http\Controllers\UserPlaylistController::class, 'editPlaylist']);
 
-// Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'show'])->name('playlist');
+Route::get('/userPlaylist/deleteSong/{userPlaylist_id}/{song_id}', [App\Http\Controllers\UserPlaylistController::class, 'deleteSong'])->name('userPlaylist.deleteSong');
+
+Route::get('/userPlaylist/{playlist_id}/{song_id}', [App\Http\Controllers\UserPlaylistController::class, 'saveSongInUserPlaylist'])->name('userPlaylist.saveSong');
+
+Route::get('/userplaylist/deletePlaylist/{userPlaylist_id}', [App\Http\Controllers\UserPlaylistController::class, 'deleteUserPlaylist'])->name('userPlaylist.deletePlaylist');
+
+Route::get('/userPlaylist', [App\Http\Controllers\UserPlaylistController::class, 'index'])->name('userPlaylist');
 
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index'])->name('genre');
 

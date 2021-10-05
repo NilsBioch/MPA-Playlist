@@ -17,5 +17,14 @@ class UserPlaylist extends Model
         return $this->belongsToMany(Song::class, 'song_userplaylist', 'userplaylist_id', 'song_id');
     }
 
+    public function calculateDuration($songs){
+        $totalDuration = 0;
+        foreach($songs as $song){
+            $totalDuration = $totalDuration + $song->duration;
+        }
+        return $totalDuration;
+    }
+
+
 
 }

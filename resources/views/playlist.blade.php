@@ -4,11 +4,13 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Your Playlist') }}
             </h2>
-            @auth
-                <a data-toggle="modal" data-target="#exampleModal" class="text-decoration-none ml-auto font-semibold  hover:text-gray-600 text-xl text-gray-800 leading-tight">
-                    {{ __('Save Playlist') }}
-                </a>
-            @endauth
+            @if(!$songs->isEmpty())
+                @auth
+                    <a data-toggle="modal" data-target="#exampleModal" class="text-decoration-none ml-auto font-semibold  hover:text-gray-600 text-xl text-gray-800 leading-tight">
+                        {{ __('Save Playlist') }}
+                    </a>
+                @endauth
+            @endif
         </div>
     </x-slot>
 
@@ -29,11 +31,10 @@
                     <a href="/playlist/remove/{{ $song->id }}" class=" text-decoration-none float-right hidden sm:flex sm:items-center sm:ml-6 flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700  transition duration-150">
                         Remove from Playlist
                     </a>
-
                     <div class="collapse" id="{{ $song->name }}">
                         <ul class="list-group">
                             <li class="list-group-item">Name: {{ $song->name }}</li>
-                            <li class="list-group-item">Duration: {{ $song->duration }}</li>
+                            <li class="list-group-item">Duration: {{ $song->duration }} seconden</li>
                             <li class="list-group-item">Artist/Band: {{ $song->artist_band }}</li>
                         </ul>
                     </div>
